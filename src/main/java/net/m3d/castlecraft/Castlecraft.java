@@ -29,6 +29,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
+import static net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get;
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Castlecraft.MOD_ID)
 public class Castlecraft {
@@ -37,13 +39,13 @@ public class Castlecraft {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public Castlecraft() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
 
-        MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
-    }
+        MinecraftForge.EVENT_BUS.register(this);  modEventBus.addListener(this::addCreative);
+    };
+
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 

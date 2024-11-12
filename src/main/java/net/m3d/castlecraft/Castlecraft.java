@@ -1,6 +1,8 @@
 package net.m3d.castlecraft;
 
 import com.mojang.logging.LogUtils;
+import net.m3d.castlecraft.item.ModCreativeModTab;
+import net.m3d.castlecraft.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -40,6 +42,14 @@ public class Castlecraft {
 
     public Castlecraft() {
         IEventBus modEventBus = get().getModEventBus();
+
+        ModCreativeModTab.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
+
+
+
 
         modEventBus.addListener(this::commonSetup);
 

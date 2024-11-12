@@ -1,10 +1,12 @@
 {
+
   "required": true,
   "minVersion": "0.8",
   "package": "net.m3d.castlecraft.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "castlecraft.refmap.json",
   "mixins": [
+
   ],
   "client": [
   ],

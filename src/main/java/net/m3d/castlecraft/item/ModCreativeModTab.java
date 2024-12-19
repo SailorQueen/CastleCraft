@@ -15,6 +15,8 @@ public class ModCreativeModTab {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Castlecraft.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("castle_tab",
+
+            //añadidos
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TAB.get()))
                     .title(Component.translatable("creativetab.castllecraft_tab"))
                     .displayItems((pParameters, pOutput) -> {
@@ -24,9 +26,10 @@ public class ModCreativeModTab {
 
                     })
                     .build());
-
+            //
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
 }
+

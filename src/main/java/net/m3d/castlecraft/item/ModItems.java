@@ -14,10 +14,10 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Castlecraft.MOD_ID);
 
 
-
+    //items
     public static final RegistryObject<Item> SANGUINE = ITEMS.register("sanguine",
             () -> new Item(new Item.Properties()));
-
+    //Tab
     public static final RegistryObject<Item> TAB = ITEMS.register("tab",
             () -> new Item(new Item.Properties()));
 

@@ -1,6 +1,9 @@
 package net.m3d.castlecraft;
 
 import com.mojang.logging.LogUtils;
+
+import net.m3d.castlecraft.Capabilitys.SoulDropHandler;
+import net.m3d.castlecraft.Capabilitys.SoulHUDRenderer;
 import net.m3d.castlecraft.item.ModCreativeModTab;
 import net.m3d.castlecraft.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -33,19 +36,21 @@ import org.slf4j.Logger;
 
 import static net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get;
 
-// The value here should match an entry in the META-INF/mods.toml file
+
+@SuppressWarnings("unused")
 @Mod(Castlecraft.MOD_ID)
 public class Castlecraft {
 
     public static final String MOD_ID = "castlecraft";
     public static final Logger LOGGER = LogUtils.getLogger();
-
     public Castlecraft() {
+        @SuppressWarnings("removal")
         IEventBus modEventBus = get().getModEventBus();
 
         ModCreativeModTab.register(modEventBus);
-
         ModItems.register(modEventBus);
+        SoulDropHandler.register(); // Manejador de eventos de muerte
+        SoulHUDRenderer.register(); // Renderizador del HUD
 
 
 
